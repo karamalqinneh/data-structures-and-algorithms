@@ -5,3 +5,6 @@ Write a function called reverseArray which takes an array as an argument. Withou
 ## Whiteboard Process
 
 ![Whiteboard](./reverseArray.jpg)
+
+Updated code
+![code](./code.png)
