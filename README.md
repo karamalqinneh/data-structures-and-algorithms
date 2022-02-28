@@ -4,3 +4,4 @@
 
 1. [Array Reverse](./javascript/arrayReverse/README.md)
 2. [Insert Shift Array](./javascript/arrayInsertShift/README.md)
+3. [Array Binary Search](./javascript/arrayBinarySearch/README.md)
