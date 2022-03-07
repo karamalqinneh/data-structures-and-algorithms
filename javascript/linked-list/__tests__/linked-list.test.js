@@ -50,4 +50,67 @@ describe("testing Linked List", () => {
       " { node3 } -> { node2 } -> { node1 } -> NULL"
     );
   });
+  it("Can successfully add a node to the end of the linked list", () => {
+    const ll = new LinkedList();
+    ll.insert("node1");
+    ll.insert("node2");
+    ll.insert("node3");
+    ll.append("lastnode");
+    expect(ll).toBeDefined();
+    expect(ll.head.value).toEqual("node3");
+    expect(ll.head.next.value).toEqual("node2");
+    expect(ll.head.next.next.value).toEqual("node1");
+    expect(ll.head.next.next.next.value).toEqual("lastnode");
+  });
+  it("Can successfully add multiple node to the end of the linked list", () => {
+    const ll = new LinkedList();
+    ll.insert("node1");
+    ll.insert("node2");
+    ll.append("node3");
+    ll.append("lastnode");
+    expect(ll).toBeDefined();
+    expect(ll.head.value).toEqual("node2");
+    expect(ll.head.next.value).toEqual("node1");
+    expect(ll.head.next.next.value).toEqual("node3");
+    expect(ll.head.next.next.next.value).toEqual("lastnode");
+  });
+  it("Can successfully insert a node before a node located 0 of a linked list", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.insertBefore("newnode", 0);
+    expect(ll).toBeDefined();
+    expect(ll.head.value).toEqual("newnode");
+  });
+  it("Can successfully insert a node before a node located i the middle of a linked list", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("node2");
+    ll.append("node3");
+    ll.append("lastnode");
+    ll.insertBefore("newnode", 2);
+    expect(ll).toBeDefined();
+    expect(ll.head.value).toEqual("node1");
+    expect(ll.head.next.value).toEqual("node2");
+    expect(ll.head.next.next.value).toEqual("newnode");
+  });
+  it("Can successfully insert a node after a node located i the middle of a linked list", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("node2");
+    ll.append("node3");
+    ll.append("lastnode");
+    ll.insertAfter("newnode", 1);
+    expect(ll).toBeDefined();
+    expect(ll.head.value).toEqual("node1");
+    expect(ll.head.next.value).toEqual("node2");
+    expect(ll.head.next.next.value).toEqual("newnode");
+  });
+  it("Can successfully insert a node after the last node of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("lastnode");
+    ll.insertAfter("newnode", 1);
+    expect(ll).toBeDefined();
+    expect(ll.head.next.next.value).toEqual("newnode");
+  });
 });

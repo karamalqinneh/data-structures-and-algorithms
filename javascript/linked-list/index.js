@@ -51,6 +51,87 @@ class LinkedList {
       console.error("Error in printing values");
     }
   }
+  append(value) {
+    let node = new Node(value);
+    let current;
+
+    // If empty, make head
+    if (!this.head) {
+      this.head = node;
+    } else {
+      current = this.head;
+
+      while (current.next) {
+        current = current.next;
+      }
+
+      current.next = node;
+    }
+
+    this.size++;
+  }
+  insertBefore(value, index) {
+    //  If index is out of range
+    if (index > 0 && index > this.size) {
+      return "out of range";
+    }
+
+    // If first index
+    if (index === 0) {
+      this.insert(value);
+      return;
+    }
+
+    const node = new Node(value);
+    let current, previous;
+
+    // Set current to first
+    current = this.head;
+    let count = 0;
+
+    while (count < index) {
+      previous = current; // Node before index
+      count++;
+      current = current.next; // Node after index
+    }
+
+    node.next = current;
+    previous.next = node;
+
+    this.size++;
+  }
+
+  insertAfter(value, index) {
+    //  If index is out of range
+    if (index > 0 && index > this.size) {
+      return "out of range";
+    }
+
+    // If first index
+    if (index === 0) {
+      this.insert(value);
+      return;
+    }
+    index += 1;
+    const node = new Node(value);
+    let current, previous;
+
+    // Set current to first
+    current = this.head;
+    let count = 0;
+
+    while (count < index) {
+      previous = current; // Node before index
+      count++;
+      current = current.next; // Node after index
+    }
+
+    node.next = current;
+    previous.next = node;
+
+    this.size++;
+  }
+
   getAt(index) {
     let current = this.head;
     let count = 0;
@@ -66,5 +147,13 @@ class LinkedList {
     return null;
   }
 }
+
+const ll = new LinkedList();
+ll.append("node1");
+ll.append("node2");
+ll.append("node3");
+ll.append("node4");
+ll.insertAfter("newnode", 2);
+console.log(ll.toString());
 
 module.exports = LinkedList;
