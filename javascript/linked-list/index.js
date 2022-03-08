@@ -146,6 +146,18 @@ class LinkedList {
 
     return null;
   }
+
+  getFromtheEnd(index) {
+    let current = this.head;
+    let totalIndex = 0;
+
+    while (current) {
+      totalIndex++;
+      current = current.next;
+    }
+    let desiredIndex = totalIndex - index;
+    return this.getAt(desiredIndex);
+  }
 }
 
 module.exports = LinkedList;
