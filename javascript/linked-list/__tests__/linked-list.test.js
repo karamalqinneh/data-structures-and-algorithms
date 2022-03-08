@@ -113,4 +113,33 @@ describe("testing Linked List", () => {
     expect(ll).toBeDefined();
     expect(ll.head.next.next.value).toEqual("newnode");
   });
+  it("Where k and the length of the list are the same", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("node2");
+    ll.append("node3");
+    ll.append("node4");
+    expect(ll.getFromtheEnd(4)).toEqual("node1");
+  });
+  it("Where k is not a positive integer", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("node2");
+    ll.append("node3");
+    ll.append("node4");
+    expect(ll.getFromtheEnd(-4)).toEqual(null);
+  });
+  it("“Happy Path” where k is not at the end, but somewhere in the middle of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    ll.append("node2");
+    ll.append("node3");
+    ll.append("node4");
+    expect(ll.getFromtheEnd(2)).toEqual("node3");
+  });
+  it("Where the linked list is of a size 1", () => {
+    const ll = new LinkedList();
+    ll.append("node1");
+    expect(ll.getFromtheEnd(1)).toEqual("node1");
+  });
 });
