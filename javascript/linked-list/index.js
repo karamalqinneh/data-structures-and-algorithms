@@ -148,12 +148,4 @@ class LinkedList {
   }
 }
 
-const ll = new LinkedList();
-ll.append("node1");
-ll.append("node2");
-ll.append("node3");
-ll.append("node4");
-ll.insertAfter("newnode", 2);
-console.log(ll.toString());
-
 module.exports = LinkedList;
