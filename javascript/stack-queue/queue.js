@@ -25,6 +25,9 @@ class Queue {
       return null;
     }
   }
+  isEmpty() {
+    return this.storage.head === null;
+  }
 }
 
 module.exports = Queue;
