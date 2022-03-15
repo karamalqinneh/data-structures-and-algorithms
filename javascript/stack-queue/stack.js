@@ -34,13 +34,4 @@ class Stack {
   }
 }
 
-let newStack = new Stack();
-newStack.pushItem(1);
-newStack.pushItem(2);
-newStack.pushItem(3);
-newStack.popItem();
-newStack.popItem();
-newStack.popItem();
-console.log(newStack.storage.toString());
-
 module.exports = Stack;
