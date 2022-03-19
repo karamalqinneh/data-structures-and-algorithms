@@ -17,21 +17,34 @@ class Stack {
   }
 
   popItem() {
-    let linkedList = this.storage;
-    linkedList.current = this.storage.head;
-    while (linkedList.current !== null) {
-      linkedList.current = linkedList.current.next;
+    if (this.storage.head.next === null) {
+      console.log("test");
+      this.storage === null;
+      return;
     }
-    if (linkedList.head === null) {
-      linkedList.head = null;
-    } else {
-      linkedList.head.next = null;
+    let currentNode = this.storage.head;
+    let secondToLastNode = this.storage.head;
+    while (currentNode.next) {
+      secondToLastNode = currentNode;
+      currentNode = currentNode.next;
     }
-    this.storage = linkedList;
+    this.storage.size--;
+    secondToLastNode.next = null;
   }
+
   isEmpty() {
     return this.storage.head === null;
   }
 }
+
+let newStack = new Stack();
+newStack.pushItem(1);
+newStack.pushItem(2);
+newStack.pushItem(3);
+newStack.popItem();
+newStack.popItem();
+newStack.popItem();
+
+console.log(newStack.storage.toString());
 
 module.exports = Stack;
