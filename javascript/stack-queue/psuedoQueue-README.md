@@ -6,11 +6,11 @@ Create a new queue that internally utilizes two Stacks.
 
 - Enqueue Method:
 
-![Enqueue Method](https://drive.google.com/file/d/13cvMnbvD-XJbuthZOpeszH7dQ1Eq9p1a/view?usp=sharing)
+![Enqueue Method](./assets/Psuedo-Queue-Enqueue.jpg)
 
 - Dequeue Method:
 
-![Dequeue Method](https://drive.google.com/file/d/19Y_9r8ugCWOmM8JSteOWJ4U-d3L4SIII/view?usp=sharing)
+![Dequeue Method](./assets/Psuedo-Queue-Dequeue.jpg)
 
 ## Approach & Efficiency
 
