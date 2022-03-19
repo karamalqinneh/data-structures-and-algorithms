@@ -17,18 +17,22 @@ class Stack {
   }
 
   popItem() {
-    let linkedList = this.storage;
-    linkedList.current = this.storage.head;
-    while (linkedList.current !== null) {
-      linkedList.current = linkedList.current.next;
+    if (this.storage.head === null) {
+      this.storage === null;
+      return;
     }
-    if (linkedList.head === null) {
-      linkedList.head = null;
-    } else {
-      linkedList.head.next = null;
+    let currentNode = this.storage.head;
+    let secondToLastNode = this.storage.head;
+    while (currentNode.next) {
+      secondToLastNode = currentNode;
+      currentNode = currentNode.next;
     }
-    this.storage = linkedList;
+    this.storage.size--;
+    let poppedValue = secondToLastNode.next;
+    secondToLastNode.next = null;
+    return poppedValue;
   }
+
   isEmpty() {
     return this.storage.head === null;
   }
