@@ -17,8 +17,7 @@ class Stack {
   }
 
   popItem() {
-    if (this.storage.head.next === null) {
-      console.log("test");
+    if (this.storage.head === null) {
       this.storage === null;
       return;
     }
@@ -29,22 +28,14 @@ class Stack {
       currentNode = currentNode.next;
     }
     this.storage.size--;
+    let poppedValue = secondToLastNode.next;
     secondToLastNode.next = null;
+    return poppedValue;
   }
 
   isEmpty() {
     return this.storage.head === null;
   }
 }
-
-let newStack = new Stack();
-newStack.pushItem(1);
-newStack.pushItem(2);
-newStack.pushItem(3);
-newStack.popItem();
-newStack.popItem();
-newStack.popItem();
-
-console.log(newStack.storage.toString());
 
 module.exports = Stack;

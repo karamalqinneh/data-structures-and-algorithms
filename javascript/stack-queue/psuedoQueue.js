@@ -6,29 +6,38 @@ class PsuedoQueue {
   constructor() {
     this.stack1 = new Stack();
     this.stack2 = new Stack();
-    this.storage = null;
-    this.top = null;
+    this.size = this.stack1.storage.size;
   }
 
   enqueue(item) {
-    this.storage.append(item);
+    let current = this.stack1.head;
+    while (current !== null) {
+      this.stack2.pushItem(this.stack1.popItem());
+      current = current.next;
+    }
+    this.stack2.pushItem(item);
+    current = this.stack2.head;
+    while (current !== null) {
+      this.stack1.pushItem(this.stack2.popItem());
+      current = current.next;
+    }
   }
 
   dequeue() {
-    let headValue = this.storage.head;
-    this.storage.head = headValue.next;
-    return headValue.value;
+    if (this.size === 0) {
+      return "queue is empty";
+    } else {
+      let headValue = this.stack1.storage.head;
+      this.stack1.storaga.head = headValue.next;
+      return headValue.value;
+    }
   }
-
   peek() {
-    if (this.storage.head) {
-      return this.storage.head.value;
+    if (this.stack1.storage.head) {
+      return this.stack1.storage.head.value;
     } else {
       return null;
     }
-  }
-  isEmpty() {
-    return this.storage.head === null;
   }
 }
 
