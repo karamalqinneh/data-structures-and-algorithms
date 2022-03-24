@@ -2,6 +2,7 @@
 "use strict";
 
 function validateBrackets(str) {
+  if (str == "") return true;
   let roundBrakets = [];
   let squareBrakets = [];
   let curlyBrakets = [];
