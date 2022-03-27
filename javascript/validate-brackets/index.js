@@ -1,11 +1,13 @@
 /* eslint-disable indent */
 "use strict";
 
+const Queue = require("../stack-queue/queue");
+
 function validateBrackets(str) {
   if (str == "") return true;
-  let roundBrakets = [];
-  let squareBrakets = [];
-  let curlyBrakets = [];
+  let roundBrakets = new Queue();
+  let squareBrakets = new Queue();
+  let curlyBrakets = new Queue();
   let brackets = ["{", "}", "[", "]", "(", ")"];
 
   brackets.forEach((ele, index) => {
@@ -14,23 +16,32 @@ function validateBrackets(str) {
     switch (index) {
       case 0:
       case 1:
-        curlyBrakets.push(str.match(regex).length);
+        curlyBrakets.enqueue(str.match(regex).length);
         break;
       case 2:
       case 3:
-        squareBrakets.push(str.match(regex).length);
+        squareBrakets.enqueue(str.match(regex).length);
         break;
       case 4:
       case 5:
-        roundBrakets.push(str.match(regex).length);
+        roundBrakets.enqueue(str.match(regex).length);
         break;
     }
   });
-  let roundValue = roundBrakets[0] == roundBrakets[1] ? true : false;
+  let roundValue =
+    roundBrakets.storage.head.value == roundBrakets.storage.head.next.value
+      ? true
+      : false;
 
-  let squareValue = squareBrakets[0] == squareBrakets[1] ? true : false;
+  let squareValue =
+    squareBrakets.storage.head.value == squareBrakets.storage.head.next.value
+      ? true
+      : false;
 
-  let curlyValue = curlyBrakets[0] == curlyBrakets[1] ? true : false;
+  let curlyValue =
+    curlyBrakets.storage.head.value == curlyBrakets.storage.head.next.value
+      ? true
+      : false;
 
   return roundValue && squareValue && curlyValue ? true : false;
 }
