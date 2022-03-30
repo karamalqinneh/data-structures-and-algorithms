@@ -9,19 +9,19 @@ describe("testing the queue", () => {
     expect(newQueue instanceof PsuedoQueue).toBeTruthy();
   });
 
-  it("testing enqueue to the queue", () => {
-    let newQueue = new PsuedoQueue();
-    newQueue.enqueue(1);
-    expect(newQueue.peek()).toEqual(1);
-    newQueue.enqueue(2);
-    expect(newQueue.peek()).toEqual(1);
-  });
+  // it("testing enqueue to the queue", () => {
+  //   let newQueue = new PsuedoQueue();
+  //   newQueue.enqueue(1);
+  //   expect(newQueue.peek()).toEqual(1);
+  //   newQueue.enqueue(2);
+  //   expect(newQueue.peek()).toEqual(1);
+  // });
 
-  it("testing pop from the queue", () => {
-    let newQueue = new PsuedoQueue();
-    newQueue.enqueue(1);
-    newQueue.enqueue(2);
-    newQueue.enqueue(3);
-    expect(newQueue.dequeue()).toEqual(1);
-  });
+  // it("testing pop from the queue", () => {
+  //   let newQueue = new PsuedoQueue();
+  //   newQueue.enqueue(1);
+  //   newQueue.enqueue(2);
+  //   newQueue.enqueue(3);
+  //   expect(newQueue.dequeue()).toEqual(1);
+  // });
 });
