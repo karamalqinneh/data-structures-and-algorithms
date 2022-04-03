@@ -8,7 +8,7 @@ Get the maximum value in the tree
 
 ## Approach & Efficiency
 
-The space complexity O(n) while the time complexity is O(n \* log(n))
+The space complexity O(n) as we'll be adding new elements to the array in the loop, while the time complexity is O(n) because we'll be iterating recursively throgh the whole tree to create the array and we'll loop through the array again to find the maximum value this will lead to O(2n) and the 2 can be dropped
 
 ## Solution
 
