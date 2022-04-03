@@ -8,15 +8,15 @@ Create a binary tree class that can traversed through the three methods of the d
 
 ## Approach & Efficiency
 
-- Pre-Order: This method have time and space complexity of O(log(n)).
+- Pre-Order: This method have time and space complexity of O(n) as you'll have to get through the whole tree to append the values.
 
-- In-Order: This method have time and space complexity of O(log(n)).
+- In-Order: This method have time and space complexity of O(n) as you'll have to get through the whole tree to append the values.
 
-- Post-Order: This method have time and space complexity of O(log(n)).
+- Post-Order: This method have time and space complexity of O(n) as you'll have to get through the whole tree to append the values.
 
 - Add: This method have time complexity of O(log(n)) and space complexity of O(1).
 
-- Contains: This method have time complexity of O(n \* log(n)) and space complexity of O(1)
+- Contains: This method have time complexity of O(n^2) as you'll have to loop through the array to find the value while also iterating recursevily through the tree to add the values and space complexity of O(1)
 
 ## API
 
