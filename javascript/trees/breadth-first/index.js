@@ -4,7 +4,7 @@ BinaryTree.prototype.breadthFirstTraversal = function () {
   let queue = [];
   let result = [];
   let node;
-  if (this.root == undefined) {
+  if (!this.root) {
     return null;
   } else {
     queue.push(this.root);

@@ -1,6 +1,5 @@
 "use strict";
 
-// Require our linked list implementation
 const BinaryTree = require("../index");
 
 describe("testing the breadth first traversal method", () => {
