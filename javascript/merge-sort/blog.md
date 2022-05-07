@@ -47,7 +47,9 @@ Sample Array: `[8,4,23,42,16,15]`
 
 ![passes](./assets/merge-sort-passes.png)
 
-All the other iterations will follow the same logic illustrated in the above photos. After i reaches the array length you'll have been through all of the array and sorted it.
+In the first three passes the array will be split recursively until each array consists of 1 element, then we'll define a new three pointers to keep track of where we are in each iteration of the while loop, then we'll check the first array pointer with the other pointer and if it's smaller we'll edit the original array using the k pointer and update the smaller index pointer, before going to the next iteration we'll check the length of each array if the the pointer is bigger than the length that means we're finished then we'll just append the values of the non finished array to the original one.
+
+All the other iterations will follow the same logic illustrated. After i reaches the array length you'll have been through all of the array and sorted it.
 
 ## Efficency
 
