@@ -4,7 +4,7 @@ create a sorting algorithm that uses comparison-based sorting.
 
 ## Whiteboard Process
 
-![Whiteboard](./assets/merge-sort.jpg)
+![Whiteboard](./assets/quick-sort.jpg)
 
 ## Approach & Efficiency
 
