@@ -4,15 +4,6 @@
 const HashMap = require("../index");
 
 describe("testing Hashmap", () => {
-  beforeEach(() => {
-    const hashmap01 = new HashMap(3);
-    hashmap01.set("Razan", "Instructor");
-    hashmap01.set("Yazan", "TA");
-    hashmap01.set("Karam", "Learner");
-    hashmap01.set("Mohammad", "Learner");
-    return hashmap01;
-  });
-
   it("Setting a key/value to your hashtable results in the value being in the data structure", () => {
     const hashmap01 = new HashMap(3);
     hashmap01.set("Karam", "Learner");
