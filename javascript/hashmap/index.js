@@ -7,8 +7,9 @@ class HashMap {
   }
 
   encode(key) {
+    let keys = `${key}`;
     return (
-      (key.split("").reduce((acc, char) => {
+      (keys.split("").reduce((acc, char) => {
         return acc + char.charCodeAt();
       }, 0) *
         444) %
