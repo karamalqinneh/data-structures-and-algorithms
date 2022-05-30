@@ -1,6 +1,5 @@
 "use strict";
 
-const Vertex = require("./vertex");
 const Edge = require("./edge");
 
 class Graph {
@@ -40,11 +39,12 @@ class Graph {
   }
 
   getNodes(startNode) {
+    if (!startNode) return null;
     let queue = [];
     let visitedNodes = new Set();
     let traversal = [];
 
-    if (startNode == null) return null;
+    if (startNode === null) return null;
     queue.push(startNode);
     visitedNodes.add(startNode);
 
@@ -52,9 +52,6 @@ class Graph {
       const currentNode = queue.shift();
       const neighbors = this.getNeighbors(currentNode);
       traversal.push(currentNode.value);
-      //   console.log({ currentNode });
-      //   console.log({ neighbors });
-      //   console.log("------------------------------");
       for (let neighbor of neighbors) {
         const neighborNode = neighbor.vertex;
         if (visitedNodes.has(neighborNode)) {
