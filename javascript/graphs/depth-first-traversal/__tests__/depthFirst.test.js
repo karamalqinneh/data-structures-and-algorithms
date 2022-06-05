@@ -4,7 +4,7 @@
 const Graph = require("../index");
 const Vertex = require("../../vertex");
 
-describe("testing graph deapth first", () => {
+describe("testing graph depth first", () => {
   it("A collection of all nodes can be properly retrieved from the graph", () => {
     const myGraph = new Graph();
     const zero = new Vertex(0);
