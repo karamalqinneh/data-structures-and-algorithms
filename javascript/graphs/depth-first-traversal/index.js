@@ -1,6 +1,6 @@
 const Graph = require("../graph");
 
-Graph.prototype.deapthFirst = function (node) {
+Graph.prototype.depthFirst = function (node) {
   let output = [];
   let s = [];
   let explored = new Set();
