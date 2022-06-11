@@ -1,32 +1,29 @@
 const Graph = require("../graph");
 
-Graph.prototype.depthFirst = function (node) {
-  let output = [];
-  let s = [];
-  let explored = new Set();
-  s.push(node);
+Graph.prototype.depthFirst = function (startNode) {
+  if (!startNode) return null;
+  let stack = [];
+  let visitedNodes = new Set();
 
-  // Mark the first node as explored
-  explored.add(node);
+  stack.push(startNode);
+  visitedNodes.add(startNode);
 
-  // We'll continue till our Stack gets empty
-  while (s.length) {
-    let t = s.pop();
-
-    // Log every element that comes out of the Stack
-    output.push(t);
-
-    // 1. In the edges object, we search for nodes this node is directly connected to.
-    // 2. We filter out the nodes that have already been explored.
-    // 3. Then we mark each unexplored node as explored and push it to the Stack.
-    this.getNeighbors(t)
-      .filter((n) => !explored.has(n))
-      .forEach((n) => {
-        explored.add(n);
-        s.push(n);
-      });
+  let result = [startNode.value];
+  while (stack.length) {
+    const currentNode = stack.pop();
+    const neighbors = this.getNeighbors(currentNode);
+    for (let neighbor of neighbors) {
+      const neighborNode = neighbor.vertex;
+      if (visitedNodes.has(neighborNode)) {
+        continue;
+      } else {
+        result.push(neighborNode.value);
+        visitedNodes.add(neighborNode);
+      }
+      stack.push(neighborNode);
+    }
   }
-  return output;
+  return result;
 };
 
 module.exports = Graph;
