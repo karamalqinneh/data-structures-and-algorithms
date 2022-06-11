@@ -27,17 +27,18 @@ describe("testing graph depth first", () => {
     myGraph.addEdge(two, four, 5);
     myGraph.addEdge(four, five, 5);
     myGraph.addEdge(five, three, 5);
-    expect(myGraph.breadthFirst(zero)).toEqual([0, 2, 3, 4, 1, 5]);
+    console.log(myGraph.depthFirst(zero));
+    expect(myGraph.depthFirst(zero)).toEqual([0, 2, 3, 4, 5, 1]);
   });
   it("A graph with only one node and edge can be properly returned", () => {
     const graph01 = new Graph();
     const zero = new Vertex(0);
     graph01.addVertex(zero);
     graph01.addEdge(zero, null, 5);
-    expect(graph01.breadthFirst(zero)).toEqual([0]);
+    expect(graph01.depthFirst(zero)).toEqual([0]);
   });
   it("An empty graph properly returns null", () => {
     const graph01 = new Graph();
-    expect(graph01.breadthFirst()).toEqual(null);
+    expect(graph01.depthFirst()).toEqual(null);
   });
 });
